@@ -19,31 +19,31 @@ class QuizApp extends StatefulWidget {
 }
 
 class _QuizAppState extends State<QuizApp> {
-  Widget? activeScreen;
+  ScreenType? activeScreen;
 
   @override
   void initState() {
     super.initState();
 
-    activeScreen = SplashScreen(onNextScreen: changeScreen);
+    activeScreen = ScreenType.splashScreen;
   }
 
-  void changeScreen(ScreenType nextScreen) {
+  void setScreenState(ScreenType nextScreen) {
     setState(() {
-      switch (nextScreen) {
-        case ScreenType.splashScreen:
-          activeScreen = SplashScreen(onNextScreen: changeScreen);
-          break;
-        // case ScreenType.questionScreen:
-        //   activeScreen = const QuestionScreen();
-        //   break;
-
-        default:
-          activeScreen = UnderconstructionScreen(
-            screenName: nextScreen,
-          );
-      }
+      activeScreen = nextScreen;
     });
+  }
+
+  Widget getActiveScreen(ScreenType screenType) {
+    debugPrint('Active Screen: $screenType');
+    switch (screenType) {
+      case ScreenType.splashScreen:
+        return SplashScreen(onNextScreen: setScreenState);
+      case ScreenType.questionScreen:
+        return const QuestionScreen();
+      default:
+        return UnderconstructionScreen(screenName: screenType);
+    }
   }
 
   @override
@@ -69,7 +69,7 @@ class _QuizAppState extends State<QuizApp> {
               end: Alignment.bottomCenter,
             ),
           ),
-          child: activeScreen,
+          child: getActiveScreen(activeScreen!),
         ),
       ),
     );
