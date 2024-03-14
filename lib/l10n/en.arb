@@ -11,39 +11,63 @@
 
   "app_under_construction": "Under Construction!",
 
-  "q1": "What are the main building blocks of Flutter UIs?",
-  "a1_1": "Widgets",
-  "a1_2": "Components",
-  "a1_3": "Blocks",
-  "a1_4": "Functions",
+  "quiz_1": "{question, select, other{What are the main building blocks of Flutter UIs?} a1{Widgets} a2{Components} a3{Blocks} a4{Functions}}",
+  "@quiz_1": {
+      "description": "quiz_1",
+      "placeholders": {
+        "question": {
+          "type":"String"
+        }
+      }
+    },
 
-  "q2": "How are Flutter UIs built?",
-  "a2_1": "By combining widgets in code",
-  "a2_2": "By combining widgets in a visual editor",
-  "a2_3": "By defining widgets in config files",
-  "a2_4": "By using XCode for iOS and Android Studio for Android",
+  "quiz_2": "{question, select, other{How are Flutter UIs built?} a1{By combining widgets in code} a2{By combining widgets in a visual editor} a3{By defining widgets in config files} a4{By using XCode for iOS and Android Studio for Android}}",
+  "@quiz_2": {
+      "description": "quiz_2",
+      "placeholders": {
+        "question": {
+          "type":"String"
+        }
+      }
+    },
 
-  "q3": "What's the purpose of a StatefulWidget?",
-  "a3_1": "Update UI as data changes",
-  "a3_2": "Update data as UI changes",
-  "a3_3": "Ignore data changes",
-  "a3_4": "Render UI that does not depend on data",
+  "quiz_3": "{question, select, other{What's the purpose of a StatefulWidget?} a1{Update UI as data changes} a2{Update data as UI changes} a3{Ignore data changes} a4{Render UI that does not depend on data}}",
+  "@quiz_3": {
+      "description": "quiz_3",
+      "placeholders": {
+        "question": {
+          "type":"String"
+        }
+      }
+    },
 
-  "q4": "Which widget should you try to use more often: StatelessWidget or StatefulWidget?",
-  "a4_1": "StatelessWidget",
-  "a4_2": "StatefulWidget",
-  "a4_3": "Both are equally good",
-  "a4_4": "None of the above",
+  "quiz_4": "{question, select, other{Which widget should you try to use more often: StatelessWidget or StatefulWidget?} a1{StatelessWidget} a2{StatefulWidget} a3{Both are equally good} a4{None of the above}}",
+  "@quiz_4": {
+      "description": "quiz_4",
+      "placeholders": {
+        "question": {
+          "type":"String"
+        }
+      }
+    },
 
-  "q5": "What happens if you change data in a StatelessWidget?",
-  "a5_1": "The UI is not updated",
-  "a5_2": "The UI is updated",
-  "a5_3": "The closest StatefulWidget is updated",
-  "a5_4": "Any nested StatefulWidgets are updated",
+  "quiz_5": "{question, select, other{What happens if you change data in a StatelessWidget?} a1{The UI is not updated} a2{The UI is updated} a3{The closest StatefulWidget is updated} a4{Any nested StatefulWidgets are updated}}",
+  "@quiz_5": {
+      "description": "quiz_5",
+      "placeholders": {
+        "question": {
+          "type":"String"
+        }
+      }
+    },
 
-  "q6": "How should you update data inside of StatefulWidgets?",
-  "a6_1": "By calling setState()",
-  "a6_2": "By calling updateData()",
-  "a6_3": "By calling updateUI()",
-  "a6_4": "By calling updateState()"
+  "quiz_6": "{question, select, other{How should you update data inside of StatefulWidgets?} a1{By calling setState()} a2{By calling updateData()} a3{By calling updateUI()} a4{By calling updateState()}}",
+  "@quiz_6": {
+      "description": "quiz_6",
+      "placeholders": {
+        "question": {
+          "type":"String"
+        }
+      }
+    }
 }
