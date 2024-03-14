@@ -9,5 +9,41 @@
   "app_title": "Simple Quiz",
   "btn_start": "Start",
 
-  "app_under_construction": "Under Construction!"
+  "app_under_construction": "Under Construction!",
+
+  "q1": "What are the main building blocks of Flutter UIs?",
+  "a1_1": "Widgets",
+  "a1_2": "Components",
+  "a1_3": "Blocks",
+  "a1_4": "Functions",
+
+  "q2": "How are Flutter UIs built?",
+  "a2_1": "By combining widgets in code",
+  "a2_2": "By combining widgets in a visual editor",
+  "a2_3": "By defining widgets in config files",
+  "a2_4": "By using XCode for iOS and Android Studio for Android",
+
+  "q3": "What's the purpose of a StatefulWidget?",
+  "a3_1": "Update UI as data changes",
+  "a3_2": "Update data as UI changes",
+  "a3_3": "Ignore data changes",
+  "a3_4": "Render UI that does not depend on data",
+
+  "q4": "Which widget should you try to use more often: StatelessWidget or StatefulWidget?",
+  "a4_1": "StatelessWidget",
+  "a4_2": "StatefulWidget",
+  "a4_3": "Both are equally good",
+  "a4_4": "None of the above",
+
+  "q5": "What happens if you change data in a StatelessWidget?",
+  "a5_1": "The UI is not updated",
+  "a5_2": "The UI is updated",
+  "a5_3": "The closest StatefulWidget is updated",
+  "a5_4": "Any nested StatefulWidgets are updated",
+
+  "q6": "How should you update data inside of StatefulWidgets?",
+  "a6_1": "By calling setState()",
+  "a6_2": "By calling updateData()",
+  "a6_3": "By calling updateUI()",
+  "a6_4": "By calling updateState()"
 }
