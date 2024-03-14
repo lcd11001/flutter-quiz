@@ -7,6 +7,7 @@ import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:simple_quiz/config.dart';
 import 'package:simple_quiz/question_screen.dart';
 import 'package:simple_quiz/splash_screen.dart';
+import 'package:simple_quiz/underconstruction_screen.dart';
 
 class QuizApp extends StatefulWidget {
   const QuizApp({super.key});
@@ -33,12 +34,14 @@ class _QuizAppState extends State<QuizApp> {
         case ScreenType.splashScreen:
           activeScreen = SplashScreen(onNextScreen: changeScreen);
           break;
-        case ScreenType.questionScreen:
-          activeScreen = const QuestionScreen();
-          break;
+        // case ScreenType.questionScreen:
+        //   activeScreen = const QuestionScreen();
+        //   break;
 
         default:
-          activeScreen = SplashScreen(onNextScreen: changeScreen);
+          activeScreen = UnderconstructionScreen(
+            screenName: nextScreen,
+          );
       }
     });
   }
@@ -46,7 +49,7 @@ class _QuizAppState extends State<QuizApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      locale: const Locale('vi'), // force to use Vietnamese
+      //locale: const Locale('vi'), // force to use Vietnamese
       localizationsDelegates: const [
         AppLocalizations.delegate,
         GlobalMaterialLocalizations.delegate,

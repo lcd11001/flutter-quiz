@@ -7,5 +7,7 @@
   },
 
   "app_title": "Simple Quiz",
-  "btn_start": "Start"
+  "btn_start": "Start",
+
+  "app_under_construction": "Under Construction!"
 }
