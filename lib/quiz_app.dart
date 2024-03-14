@@ -46,6 +46,7 @@ class _QuizAppState extends State<QuizApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      locale: const Locale('vi'), // force to use Vietnamese
       localizationsDelegates: const [
         AppLocalizations.delegate,
         GlobalMaterialLocalizations.delegate,

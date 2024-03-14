@@ -1,5 +1,8 @@
 {
     "@@locale": "vi",
 
-    "helloWorld": "Xin chào"
+    "helloWorld": "Xin chào",
+
+    "app_title": "Ai Là Triệu Phú",
+    "btn_start": "Bắt đầu"
 }

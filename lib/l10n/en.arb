@@ -4,5 +4,8 @@
   "helloWorld": "Hello World!",
   "@helloWorld": {
     "description": "The conventional newborn programmer greeting"
-  }
+  },
+
+  "app_title": "Simple Quiz",
+  "btn_start": "Start"
 }

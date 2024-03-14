@@ -23,9 +23,9 @@ class SplashScreen extends StatelessWidget {
             color: const Color.fromARGB(150, 255, 255, 255),
           ),
           const SizedBox(height: 80),
-          const Text(
-            "Simple Quiz",
-            style: TextStyle(
+          Text(
+            _.app_title,
+            style: const TextStyle(
               fontSize: 30,
               color: Colors.white,
               fontWeight: FontWeight.bold,
@@ -46,7 +46,7 @@ class SplashScreen extends StatelessWidget {
               ),
             ),
             icon: const Icon(Icons.play_arrow),
-            label: Text(_.helloWorld),
+            label: Text(_.btn_start),
           ),
         ],
       ),
