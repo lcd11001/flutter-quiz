@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:simple_quiz/components/question_element.dart';
 
 class QuestionScreen extends StatefulWidget {
   const QuestionScreen({super.key});
@@ -6,6 +7,15 @@ class QuestionScreen extends StatefulWidget {
   @override
   State<QuestionScreen> createState() {
     return _QuestionScreenState();
+  }
+
+  String localizeCallback(String key) {
+    return key;
+  }
+
+  void onAnswerSelected(String answer) {
+    // do nothing
+    debugPrint('Answer selected: $answer');
   }
 }
 
@@ -19,30 +29,12 @@ class _QuestionScreenState extends State<QuestionScreen> {
           //mainAxisSize: MainAxisSize.min,
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const Text('Question 1',
-                style: TextStyle(
-                  fontSize: 24,
-                  color: Colors.white,
-                )),
-            const SizedBox(
-              height: 30,
-            ),
-            ElevatedButton(
-              onPressed: () {},
-              child: Text('Answer 1'),
-            ),
-            ElevatedButton(
-              onPressed: () {},
-              child: Text('Answer 2'),
-            ),
-            ElevatedButton(
-              onPressed: () {},
-              child: Text('Answer 3'),
-            ),
-            ElevatedButton(
-              onPressed: () {},
-              child: Text('Answer 4'),
-            ),
+            QuestionElement(
+              question: "question",
+              answers: const ["answer 1", "answer 2"],
+              onAnswerSelected: widget.onAnswerSelected,
+              localizeCallback: widget.localizeCallback,
+            )
           ],
         ),
       ),
