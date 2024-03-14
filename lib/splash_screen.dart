@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+
 import 'package:simple_quiz/config.dart';
 
 class SplashScreen extends StatelessWidget {
@@ -9,6 +11,8 @@ class SplashScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final _ = AppLocalizations.of(context)!;
+
     return Center(
       child: Column(
         mainAxisSize: MainAxisSize.min,
@@ -42,7 +46,7 @@ class SplashScreen extends StatelessWidget {
               ),
             ),
             icon: const Icon(Icons.play_arrow),
-            label: const Text('Start Quiz'),
+            label: Text(_.helloWorld),
           ),
         ],
       ),

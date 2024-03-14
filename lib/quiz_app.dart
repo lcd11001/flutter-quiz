@@ -1,4 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
+
+// run 'flutter gen-l10n' to generate the AppLocalizations class
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+
 import 'package:simple_quiz/config.dart';
 import 'package:simple_quiz/question_screen.dart';
 import 'package:simple_quiz/splash_screen.dart';
@@ -41,6 +46,13 @@ class _QuizAppState extends State<QuizApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      localizationsDelegates: const [
+        AppLocalizations.delegate,
+        GlobalMaterialLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
+        GlobalCupertinoLocalizations.delegate,
+      ],
+      supportedLocales: AppLocalizations.supportedLocales,
       home: Scaffold(
         body: Container(
           decoration: BoxDecoration(
