@@ -23,8 +23,8 @@ class AnswerButton extends StatelessWidget {
           borderRadius: BorderRadius.circular(20),
         ),
         padding: const EdgeInsets.symmetric(
-          vertical: 10,
-          horizontal: 40,
+          vertical: 15,
+          horizontal: 30,
         ),
       ),
       onPressed: () {

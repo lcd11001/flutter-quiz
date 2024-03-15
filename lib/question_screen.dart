@@ -50,6 +50,7 @@ class _QuestionScreenState extends State<QuestionScreen> {
         child: Column(
           //mainAxisSize: MainAxisSize.min,
           mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             QuestionElement(
               question: currentQuestion.question,

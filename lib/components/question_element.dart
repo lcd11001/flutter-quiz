@@ -16,32 +16,39 @@ class QuestionElement extends StatelessWidget {
     required this.onAnswerSelected,
   });
 
-  List<AnswerButton> generateAnwerWidgets() {
+  Iterable<Widget> generateAnwerWidgets() {
     return answers.map((answer) {
-      return AnswerButton(
-        answer: answer,
-        onAnswerSelected: onAnswerSelected,
+      return Container(
+        margin: const EdgeInsets.only(bottom: 15),
+        child: AnswerButton(
+          answer: answer,
+          onAnswerSelected: onAnswerSelected,
+        ),
       );
-    }).toList();
+    });
   }
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Text(
-          question,
-          style: const TextStyle(
-            fontSize: 24,
-            fontWeight: FontWeight.bold,
-            color: Colors.white,
+    return Container(
+      margin: const EdgeInsets.all(40),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          Text(
+            question,
+            style: const TextStyle(
+              fontSize: 24,
+              fontWeight: FontWeight.bold,
+              color: Colors.white,
+            ),
+            textAlign: TextAlign.center,
           ),
-        ),
-        const SizedBox(height: 40),
-        Column(
-          children: generateAnwerWidgets(),
-        ),
-      ],
+          const SizedBox(height: 40),
+          ...generateAnwerWidgets(),
+        ],
+      ),
     );
   }
 }
