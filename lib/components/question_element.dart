@@ -8,20 +8,17 @@ class QuestionElement extends StatelessWidget {
   final String question;
   final List<String> answers;
   final ReturnCallback<void, String> onAnswerSelected;
-  final ReturnCallback<String, String> localizeCallback;
 
   const QuestionElement({
     super.key,
     required this.question,
     required this.answers,
     required this.onAnswerSelected,
-    required this.localizeCallback,
   });
 
   List<AnswerButton> generateAnwerWidgets() {
     return answers.map((answer) {
       return AnswerButton(
-        localizeCallback: localizeCallback,
         answer: answer,
         onAnswerSelected: onAnswerSelected,
       );
@@ -33,7 +30,7 @@ class QuestionElement extends StatelessWidget {
     return Column(
       children: [
         Text(
-          localizeCallback(question),
+          question,
           style: const TextStyle(
             fontSize: 24,
             fontWeight: FontWeight.bold,

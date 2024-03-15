@@ -6,11 +6,9 @@ import 'package:simple_quiz/config.dart';
 class AnswerButton extends StatelessWidget {
   final String answer;
   final ReturnCallback<void, String> onAnswerSelected;
-  final ReturnCallback<String, String> localizeCallback;
 
   const AnswerButton({
     super.key,
-    required this.localizeCallback,
     required this.answer,
     required this.onAnswerSelected,
   });
@@ -33,7 +31,7 @@ class AnswerButton extends StatelessWidget {
         onAnswerSelected(answer);
       },
       child: Text(
-        localizeCallback(answer),
+        answer,
       ),
     );
   }
