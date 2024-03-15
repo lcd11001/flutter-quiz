@@ -10,7 +10,9 @@ import 'package:simple_quiz/splash_screen.dart';
 import 'package:simple_quiz/underconstruction_screen.dart';
 
 class QuizApp extends StatefulWidget {
-  const QuizApp({super.key});
+  final String defaultLanguage;
+
+  const QuizApp({super.key, this.defaultLanguage = 'en'});
 
   @override
   State<QuizApp> createState() {
@@ -49,7 +51,7 @@ class _QuizAppState extends State<QuizApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      //locale: const Locale('vi'), // force to use Vietnamese
+      locale: Locale(widget.defaultLanguage), // force to use Vietnamese
       localizationsDelegates: AppLocalizations.localizationsDelegates,
       supportedLocales: AppLocalizations.supportedLocales,
       home: Scaffold(

@@ -7,22 +7,37 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:simple_quiz/quiz_app.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+
+// https://stackoverflow.com/questions/52463714/how-to-test-localized-widgets-in-flutter/73248298#73248298
+Future<AppLocalizations> getLocalizations(WidgetTester t,
+    {String defaultLanguage = 'en'}) async {
+  late AppLocalizations result;
+  await t.pumpWidget(
+    MaterialApp(
+      locale: Locale(defaultLanguage),
+      localizationsDelegates: AppLocalizations.localizationsDelegates,
+      supportedLocales: AppLocalizations.supportedLocales,
+      home: Material(
+        child: Builder(
+          builder: (BuildContext context) {
+            result = AppLocalizations.of(context)!;
+            return Container();
+          },
+        ),
+      ),
+    ),
+  );
+  return result;
+}
 
 void main() {
-  testWidgets('Counter increments smoke test', (WidgetTester tester) async {
+  testWidgets('Splash screen test', (WidgetTester tester) async {
     // Build our app and trigger a frame.
-    await tester.pumpWidget(const MaterialApp());
-
-    // Verify that our counter starts at 0.
-    expect(find.text('0'), findsOneWidget);
-    expect(find.text('1'), findsNothing);
-
-    // Tap the '+' icon and trigger a frame.
-    await tester.tap(find.byIcon(Icons.add));
-    await tester.pump();
-
-    // Verify that our counter has incremented.
-    expect(find.text('0'), findsNothing);
-    expect(find.text('1'), findsOneWidget);
+    await getLocalizations(tester).then((localizations) async {
+      await tester.pumpWidget(const QuizApp());
+      expect(find.text(localizations.app_title), findsOne);
+    });
   });
 }
