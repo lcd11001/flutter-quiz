@@ -54,7 +54,8 @@ class _QuestionScreenState extends State<QuestionScreen> {
           children: [
             QuestionElement(
               question: currentQuestion.question,
-              answers: currentQuestion.answers,
+              //answers: currentQuestion.answers,
+              answers: currentQuestion.shuffledAnswers,
               onAnswerSelected: onAnswerSelected,
             )
           ],
