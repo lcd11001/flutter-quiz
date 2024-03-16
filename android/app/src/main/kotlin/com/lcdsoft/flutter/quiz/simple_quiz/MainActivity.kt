@@ -1,4 +1,4 @@
-package com.lcdsoft.flutter.quiz.simple_quiz
+package com.lcdsoft.flutter.quiz
 
 import io.flutter.embedding.android.FlutterActivity
 
