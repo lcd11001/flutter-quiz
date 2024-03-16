@@ -29,7 +29,7 @@ if (keystorePropertiesFile.exists()) {
 }
 
 android {
-    namespace "com.lcdsoft.flutter.quiz.simple_quiz"
+    namespace "com.lcdsoft.flutter.quiz"
     compileSdk flutter.compileSdkVersion
     ndkVersion flutter.ndkVersion
 
