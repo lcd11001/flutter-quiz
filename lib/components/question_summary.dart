@@ -13,7 +13,7 @@ class QuestionSummary extends StatelessWidget {
   Iterable<Widget> generateSummaryWidgets() {
     return summaryData.map((item) {
       return AnswerSummary(
-        questionIndex: 0,
+        id: item['id'] as int,
         question: item['question'] as String,
         correctAnswer: item['correctAnswer'] as String,
         userAnswer: item['userAnswer'] as String,

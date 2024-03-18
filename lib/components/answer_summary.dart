@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class AnswerSummary extends StatelessWidget {
-  final int questionIndex;
+  final int id;
   final String question;
   final String correctAnswer;
   final String userAnswer;
@@ -9,7 +9,7 @@ class AnswerSummary extends StatelessWidget {
 
   const AnswerSummary({
     super.key,
-    required this.questionIndex,
+    required this.id,
     required this.question,
     required this.correctAnswer,
     required this.userAnswer,
@@ -24,7 +24,7 @@ class AnswerSummary extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           Text(
-            'Question ${questionIndex + 1}',
+            'Question ${id.toString()}',
             style: const TextStyle(
               fontSize: 20,
               fontWeight: FontWeight.bold,
