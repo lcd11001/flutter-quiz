@@ -4,5 +4,15 @@
     "helloWorld": "Xin chào",
 
     "app_title": "Ai Là Triệu Phú",
-    "btn_start": "Bắt đầu"
+    "btn_start": "Bắt đầu",
+
+    "summary": "Bạn đã trả lời đúng {correctAnswers} câu hỏi trong tổng số {totalQuestions} câu hỏi!",
+
+    "btn_reset": "Chơi lại",
+
+    "txt_question": "Câu hỏi {id}",
+
+    "txt_correct_answer": "Câu trả lời đúng: {answer}",
+
+    "txt_user_answer": "Câu trả lời của bạn: {answer}"
 }

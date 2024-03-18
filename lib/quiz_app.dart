@@ -79,6 +79,23 @@ class _QuizAppState extends State<QuizApp> {
       localizationsDelegates: AppLocalizations.localizationsDelegates,
       supportedLocales: AppLocalizations.supportedLocales,
       home: Scaffold(
+        /*
+        extendBodyBehindAppBar: false,
+        backgroundColor: Colors.red,
+        appBar: AppBar(
+            backgroundColor: Colors.yellow,
+            elevation: 0,
+            title: FutureBuilder(
+              future: getDelay(),
+              builder: (context, snapshot) {
+                if (snapshot.connectionState != ConnectionState.done) {
+                  return const Text("Loading...");
+                }
+                final _ = AppLocalizations.of(context);
+                return Text(_?.app_title ?? "NULL TITLE");
+              },
+            )),
+        */
         body: Container(
           decoration: BoxDecoration(
             gradient: LinearGradient(
@@ -94,5 +111,12 @@ class _QuizAppState extends State<QuizApp> {
         ),
       ),
     );
+  }
+
+  Future<bool> getDelay() async {
+    await Future.delayed(const Duration(milliseconds: 100));
+    // fix AppLocalizations.of(context) return null
+    // delay a bit for the AppLocalizations to be loaded
+    return true;
   }
 }
