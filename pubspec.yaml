@@ -76,7 +76,7 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
-    - assets/images/quiz-logo.png
+    - assets/images/
     - assets/google_fonts/Lato/
     - assets/google_fonts/Metal/
     - assets/google_fonts/Odibee_Sans/
