@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:simple_quiz/components/question_summary.dart';
 import 'package:simple_quiz/data/questions.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class ResultScreen extends StatelessWidget {
   final List<String> selectedAnswers;
@@ -42,6 +44,8 @@ class ResultScreen extends StatelessWidget {
         answerResults.where((item) => item['isCorrect'] as bool).length;
     final totalQuestions = questions.length;
 
+    final _ = AppLocalizations.of(context)!;
+
     return Center(
       child: Container(
         margin: const EdgeInsets.all(40),
@@ -51,11 +55,21 @@ class ResultScreen extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             Text(
-                'You have answered $correctAnswers out of $totalQuestions questions correctly!'),
+              _.summary(correctAnswers, totalQuestions),
+              style: GoogleFonts.lato(
+                fontSize: 20,
+                color: Colors.white,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
             const SizedBox(height: 30),
-            const Text('Your answers:'),
-            QuestionSummary(summaryData: answerResults),
-            const SizedBox(height: 30),
+            Expanded(
+              child: Container(
+                color: Colors.transparent, // make debug color invisible
+                child: QuestionSummary(summaryData: answerResults),
+              ),
+            ),
+            const SizedBox(height: 0),
             OutlinedButton.icon(
               onPressed: onResetQuiz,
               style: OutlinedButton.styleFrom(
@@ -67,7 +81,14 @@ class ResultScreen extends StatelessWidget {
                 ),
               ),
               icon: const Icon(Icons.refresh),
-              label: Text('reset quiz'),
+              label: Text(
+                _.btn_reset,
+                style: GoogleFonts.lato(
+                  fontSize: 20,
+                  color: Colors.white,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
             ),
           ],
         ),

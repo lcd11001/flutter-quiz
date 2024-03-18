@@ -9,5 +9,56 @@
   "app_title": "Simple Quiz",
   "btn_start": "Start",
 
-  "app_under_construction": "Under Construction!"  
+  "app_under_construction": "Under Construction!",
+  
+  "summary": "You have answered {correctAnswers} out of {totalQuestions} questions correctly!",
+  "@summary": {
+    "description": "Summary of the quiz results",
+    "placeholders": {
+      "correctAnswers": 
+      {
+        "type": "int",
+        "description": "The number of questions answered correctly"
+      },
+      "totalQuestions": {
+        "type": "int",
+        "description": "The total number of questions"
+      }
+    }
+  },
+
+  "btn_reset": "Reset Quiz",
+
+  "txt_question": "Question {id}",
+  "@txt_question": {
+    "description": "The question number",
+    "placeholders": {
+      "id": {
+        "type": "String",
+        "description": "The question number"
+      }
+    }
+  },
+
+  "txt_correct_answer": "Correct Answer: {answer}",
+  "@txt_correct_answer": {
+    "description": "The correct answer to the question",
+    "placeholders": {
+      "answer": {
+        "type": "String",
+        "description": "The correct answer"
+      }
+    }
+  },
+
+  "txt_user_answer": "Your Answer: {answer}",
+  "@txt_user_answer": {
+    "description": "The user's answer to the question",
+    "placeholders": {
+      "answer": {
+        "type": "String",
+        "description": "The user's answer"
+      }
+    }
+  }
 }

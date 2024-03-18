@@ -12,22 +12,27 @@ class QuestionSummary extends StatelessWidget {
 
   Iterable<Widget> generateSummaryWidgets() {
     return summaryData.map((item) {
-      return AnswerSummary(
-        id: item['id'] as String,
-        question: item['question'] as String,
-        correctAnswer: item['correctAnswer'] as String,
-        userAnswer: item['userAnswer'] as String,
-        isCorrect: item['isCorrect'] as bool,
+      return Container(
+        margin: const EdgeInsets.only(bottom: 20),
+        child: AnswerSummary(
+          id: item['id'] as String,
+          question: item['question'] as String,
+          correctAnswer: item['correctAnswer'] as String,
+          userAnswer: item['userAnswer'] as String,
+          isCorrect: item['isCorrect'] as bool,
+        ),
       );
     });
   }
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        ...generateSummaryWidgets(),
-      ],
+    return SingleChildScrollView(
+      child: Column(
+        children: [
+          ...generateSummaryWidgets(),
+        ],
+      ),
     );
   }
 }
