@@ -20,7 +20,8 @@ class QuizApp extends StatefulWidget {
 }
 
 class _QuizAppState extends State<QuizApp> {
-  ScreenType? activeScreen;
+  late ScreenType? activeScreen;
+  final List<String> selectedAnswers = [];
 
   @override
   void initState() {
@@ -41,10 +42,15 @@ class _QuizAppState extends State<QuizApp> {
       case ScreenType.splashScreen:
         return SplashScreen(onNextScreen: setScreenState);
       case ScreenType.questionScreen:
-        return const QuestionScreen();
+        return QuestionScreen(onSelectAnswer: chooseAnswer);
       default:
         return UnderconstructionScreen(screenName: screenType);
     }
+  }
+
+  void chooseAnswer(String answer) {
+    selectedAnswers.add(answer);
+    debugPrint('chooseAnswer: $selectedAnswers');
   }
 
   @override

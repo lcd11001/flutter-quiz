@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:simple_quiz/components/question_element.dart';
+import 'package:simple_quiz/config.dart';
 import 'package:simple_quiz/models/quiz_question.dart';
 
 import 'data/questions.dart';
 
 class QuestionScreen extends StatefulWidget {
-  const QuestionScreen({super.key});
+  final Callback<String> onSelectAnswer;
+
+  const QuestionScreen({super.key, required this.onSelectAnswer});
 
   @override
   State<QuestionScreen> createState() {
@@ -28,18 +31,23 @@ class _QuestionScreenState extends State<QuestionScreen> {
 
   void nextQuestion() {
     setState(() {
-      currentIndex = (currentIndex + 1) % questionCount;
+      //currentIndex = (currentIndex + 1) % questionCount;
+      currentIndex++;
     });
   }
 
-  void onAnswerSelected(String answer) {
-    debugPrint('Answer selected: $answer');
+  void answerQuestion(String answer) {
+    debugPrint('answerQuestion: $answer');
+    widget.onSelectAnswer(answer);
+    nextQuestion();
+    /*
     if (answer == currentQuestion.answers[currentQuestion.correctAnswer]) {
       debugPrint('Correct answer!');
       nextQuestion();
     } else {
       debugPrint('Wrong answer!');
     }
+    */
   }
 
   @override
@@ -56,7 +64,7 @@ class _QuestionScreenState extends State<QuestionScreen> {
               question: currentQuestion.question,
               //answers: currentQuestion.answers,
               answers: currentQuestion.shuffledAnswers,
-              onAnswerSelected: onAnswerSelected,
+              onAnswerSelected: answerQuestion,
             )
           ],
         ),
