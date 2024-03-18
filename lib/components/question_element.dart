@@ -1,5 +1,6 @@
 // Generate QuestionElement widget
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 import 'package:simple_quiz/components/answer_button.dart';
 import 'package:simple_quiz/config.dart';
@@ -38,7 +39,14 @@ class QuestionElement extends StatelessWidget {
         children: [
           Text(
             question,
+            /*
             style: const TextStyle(
+              fontSize: 24,
+              fontWeight: FontWeight.bold,
+              color: Colors.white,
+            ),
+            */
+            style: GoogleFonts.lato(
               fontSize: 24,
               fontWeight: FontWeight.bold,
               color: Colors.white,

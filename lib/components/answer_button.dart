@@ -1,5 +1,6 @@
 // generate AnswerButton class
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 import 'package:simple_quiz/config.dart';
 
@@ -32,6 +33,10 @@ class AnswerButton extends StatelessWidget {
       },
       child: Text(
         answer,
+        style: GoogleFonts.metal(
+          fontSize: 20,
+          fontWeight: FontWeight.normal,
+        ),
       ),
     );
   }
