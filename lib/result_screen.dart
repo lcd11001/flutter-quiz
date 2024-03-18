@@ -37,6 +37,11 @@ class ResultScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final answerResults = getAnswerResults();
+    final correctAnswers =
+        answerResults.where((item) => item['isCorrect'] as bool).length;
+    final totalQuestions = questions.length;
+
     return Center(
       child: Container(
         margin: const EdgeInsets.all(40),
@@ -45,10 +50,11 @@ class ResultScreen extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            const Text('You have answered X out of Y questions correctly!'),
+            Text(
+                'You have answered $correctAnswers out of $totalQuestions questions correctly!'),
             const SizedBox(height: 30),
             const Text('Your answers:'),
-            QuestionSummary(summaryData: getAnswerResults()),
+            QuestionSummary(summaryData: answerResults),
             const SizedBox(height: 30),
             OutlinedButton.icon(
               onPressed: onResetQuiz,
