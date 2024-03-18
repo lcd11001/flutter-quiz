@@ -53,21 +53,18 @@ class _QuestionScreenState extends State<QuestionScreen> {
   @override
   Widget build(BuildContext context) {
     return Center(
-      child: SizedBox(
-        width: double.infinity,
-        child: Column(
-          //mainAxisSize: MainAxisSize.min,
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-            QuestionElement(
-              question: currentQuestion.question,
-              //answers: currentQuestion.answers,
-              answers: currentQuestion.shuffledAnswers,
-              onAnswerSelected: answerQuestion,
-            )
-          ],
-        ),
+      child: Column(
+        //mainAxisSize: MainAxisSize.min,
+        mainAxisAlignment: MainAxisAlignment.center,
+        //crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          QuestionElement(
+            question: currentQuestion.question,
+            //answers: currentQuestion.answers,
+            answers: currentQuestion.shuffledAnswers,
+            onAnswerSelected: answerQuestion,
+          )
+        ],
       ),
     );
   }

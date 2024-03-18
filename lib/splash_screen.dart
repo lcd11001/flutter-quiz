@@ -50,7 +50,7 @@ class SplashScreen extends StatelessWidget {
               foregroundColor: Colors.white,
               side: const BorderSide(
                 color: Colors.purpleAccent,
-                width: 2,
+                width: 1,
               ),
             ),
             icon: const Icon(Icons.play_arrow),
