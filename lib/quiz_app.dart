@@ -6,6 +6,7 @@ import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:simple_quiz/config.dart';
 import 'package:simple_quiz/data/questions.dart';
 import 'package:simple_quiz/question_screen.dart';
+import 'package:simple_quiz/result_screen.dart';
 import 'package:simple_quiz/splash_screen.dart';
 import 'package:simple_quiz/underconstruction_screen.dart';
 
@@ -46,6 +47,12 @@ class _QuizAppState extends State<QuizApp> {
       case ScreenType.questionScreen:
         return QuestionScreen(onSelectAnswer: chooseAnswer);
 
+      case ScreenType.resultScreen:
+        return ResultScreen(
+          selectedAnswers: selectedAnswers,
+          onResetQuiz: resetQuiz,
+        );
+
       default:
         return UnderconstructionScreen(screenName: screenType);
     }
@@ -57,8 +64,13 @@ class _QuizAppState extends State<QuizApp> {
 
     if (selectedAnswers.length == questions.length) {
       selectedAnswers.clear();
-      setScreenState(ScreenType.splashScreen);
+      setScreenState(ScreenType.resultScreen);
     }
+  }
+
+  void resetQuiz() {
+    selectedAnswers.clear();
+    setScreenState(ScreenType.splashScreen);
   }
 
   @override
