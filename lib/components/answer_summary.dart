@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class AnswerSummary extends StatelessWidget {
-  final int id;
+  final String id;
   final String question;
   final String correctAnswer;
   final String userAnswer;
@@ -24,7 +24,7 @@ class AnswerSummary extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           Text(
-            'Question ${id.toString()}',
+            'Question $id',
             style: const TextStyle(
               fontSize: 20,
               fontWeight: FontWeight.bold,

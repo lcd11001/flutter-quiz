@@ -24,7 +24,7 @@ class ResultScreen extends StatelessWidget {
       final userAnswer = selectedAnswers[i];
       final isCorrect = userAnswer == correctAnswer;
       results.add({
-        'id': i + 1,
+        'id': '${i + 1}',
         'question': question,
         'correctAnswer': correctAnswer,
         'userAnswer': userAnswer,
