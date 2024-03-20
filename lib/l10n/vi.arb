@@ -1,18 +1,47 @@
 {
     "@@locale": "vi",
-
     "helloWorld": "Xin chào",
-
     "app_title": "Ai Là Triệu Phú",
     "btn_start": "Bắt đầu",
-
     "summary": "Bạn đã trả lời đúng {correctAnswers} câu hỏi trong tổng số {totalQuestions} câu hỏi!",
-
     "btn_reset": "Chơi lại",
-
     "txt_question": "Câu hỏi {id}",
-
     "txt_correct_answer": "Câu trả lời đúng: {answer}",
-
-    "txt_user_answer": "Câu trả lời của bạn: {answer}"
+    "txt_user_answer": "Câu trả lời của bạn: {answer}",
+    
+    "question1": "Câu hỏi 1: Ai là người đầu tiên đặt chân lên Mặt Trăng?",
+    "answer1_1": "Neil Armstrong",
+    "answer1_2": "Buzz Aldrin",
+    "answer1_3": "Michael Collins",
+    "answer1_4": "Yuri Gagarin",
+    
+    "question2": "Câu hỏi 2: Trong hệ mặt trời, hành tinh nào gần nhất với Mặt Trời?",
+    "answer2_1": "Mercury",
+    "answer2_2": "Venus",
+    "answer2_3": "Earth",
+    "answer2_4": "Mars",
+    
+    "question3": "Câu hỏi 3: Ai là người sáng lập Microsoft?",
+    "answer3_1": "Bill Gates",
+    "answer3_2": "Steve Jobs",
+    "answer3_3": "Mark Zuckerberg",
+    "answer3_4": "Elon Musk",
+    
+    "question4": "Câu hỏi 4: Trong lịch sử Việt Nam, ai là người đã đánh bại quân xâm lược Mông Cổ?",
+    "answer4_1": "Trần Hưng Đạo",
+    "answer4_2": "Lê Lợi",
+    "answer4_3": "Nguyễn Huệ",
+    "answer4_4": "Quang Trung",
+    
+    "question5": "Câu hỏi 5: Ai là người phát minh ra đèn điện?",
+    "answer5_1": "Thomas Edison",
+    "answer5_2": "Nikola Tesla",
+    "answer5_3": "Alexander Graham Bell",
+    "answer5_4": "Albert Einstein",
+    
+    "question6": "Câu hỏi 6: Trong hệ mặt trời, hành tinh nào có vòng tròn màu sắc xung quanh?",
+    "answer6_1": "Saturn",
+    "answer6_2": "Jupiter",
+    "answer6_3": "Uranus",
+    "answer6_4": "Neptune"
 }
