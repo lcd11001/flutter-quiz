@@ -4,6 +4,7 @@ import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import 'package:simple_quiz/config.dart';
+import 'package:simple_quiz/data/questions.dart';
 
 class SplashScreen extends StatelessWidget {
   final Callback<ScreenType> onNextScreen;
@@ -43,6 +44,8 @@ class SplashScreen extends StatelessWidget {
           OutlinedButton.icon(
             onPressed: () {
               debugPrint('Button Pressed');
+              // load questions before change screen
+              loadQuestions(_);
               onNextScreen(ScreenType.questionScreen);
             },
             style: OutlinedButton.styleFrom(
@@ -66,5 +69,9 @@ class SplashScreen extends StatelessWidget {
         ],
       ),
     );
+  }
+
+  void loadQuestions(AppLocalizations loc) {
+    Questions.init(loc);
   }
 }

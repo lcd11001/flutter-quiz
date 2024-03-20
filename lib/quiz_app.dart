@@ -62,7 +62,7 @@ class _QuizAppState extends State<QuizApp> {
     selectedAnswers.add(answer);
     debugPrint('chooseAnswer: $selectedAnswers');
 
-    if (selectedAnswers.length == questions.length) {
+    if (selectedAnswers.length == Questions.data.length) {
       setScreenState(ScreenType.resultScreen);
     }
   }

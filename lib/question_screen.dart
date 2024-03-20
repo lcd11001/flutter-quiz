@@ -3,7 +3,7 @@ import 'package:simple_quiz/components/question_element.dart';
 import 'package:simple_quiz/config.dart';
 import 'package:simple_quiz/models/quiz_question.dart';
 
-import 'data/questions.dart';
+import 'package:simple_quiz/data/questions.dart';
 
 class QuestionScreen extends StatefulWidget {
   final Callback<String> onSelectAnswer;
@@ -19,9 +19,9 @@ class QuestionScreen extends StatefulWidget {
 class _QuestionScreenState extends State<QuestionScreen> {
   late int currentIndex;
 
-  int get questionCount => questions.length;
-  QuizQuestion get currentQuestion => questions[currentIndex];
-  int get correctAnswers => questions[currentIndex].correctAnswer;
+  int get questionCount => Questions.data.length;
+  QuizQuestion get currentQuestion => Questions.data[currentIndex];
+  int get correctAnswers => Questions.data[currentIndex].correctAnswer;
 
   @override
   void initState() {

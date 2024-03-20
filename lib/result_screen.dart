@@ -20,7 +20,7 @@ class ResultScreen extends StatelessWidget {
     List<Map<String, Object>> results = [];
 
     for (int i = 0; i < selectedAnswers.length; i++) {
-      final data = questions[i];
+      final data = Questions.data[i];
       final question = data.question;
       final correctAnswer = data.answers[data.correctAnswer];
       final userAnswer = selectedAnswers[i];
@@ -42,7 +42,7 @@ class ResultScreen extends StatelessWidget {
     final answerResults = getAnswerResults();
     final correctAnswers =
         answerResults.where((item) => item['isCorrect'] as bool).length;
-    final totalQuestions = questions.length;
+    final totalQuestions = Questions.data.length;
 
     final _ = AppLocalizations.of(context)!;
 
