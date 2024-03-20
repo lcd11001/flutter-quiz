@@ -13,7 +13,7 @@ class Utils {
     double fontSize = 24,
     Color fontColor = Colors.white,
   }) {
-    String languageCode = _getLanguageCode(context);
+    final String languageCode = _getLanguageCode(context);
 
     if (languageCode == 'vi') {
       return GoogleFonts.cabin(
@@ -35,7 +35,7 @@ class Utils {
     double fontSize = 20,
     Color fontColor = Colors.white,
   }) {
-    String languageCode = _getLanguageCode(context);
+    final String languageCode = _getLanguageCode(context);
 
     if (languageCode == 'vi') {
       return GoogleFonts.jura(
@@ -57,7 +57,7 @@ class Utils {
     double fontSize = 20,
     Color fontColor = Colors.white,
   }) {
-    String languageCode = _getLanguageCode(context);
+    final String languageCode = _getLanguageCode(context);
 
     if (languageCode == 'vi') {
       return GoogleFonts.calistoga(

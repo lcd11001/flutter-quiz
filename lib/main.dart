@@ -7,7 +7,7 @@ void main() {
   GoogleFonts.config.allowRuntimeFetching = false;
   runApp(
     const QuizApp(
-      defaultLanguage: 'vi',
-    ),
+        //defaultLanguage: 'vi',
+        ),
   );
 }
