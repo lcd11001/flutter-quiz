@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:simple_quiz/utils/utils.dart';
 
 class AnswerSummary extends StatelessWidget {
   final String id;
@@ -29,36 +30,24 @@ class AnswerSummary extends StatelessWidget {
         children: [
           Text(
             _.txt_question(id),
-            style: GoogleFonts.odibeeSans(
-              fontSize: 20,
-              fontWeight: FontWeight.bold,
-              color: Colors.white,
-            ),
+            style: Utils.getSummaryTextStyle(context),
           ),
           const SizedBox(height: 10),
           Text(
             question,
-            style: GoogleFonts.lato(
-              fontSize: 16,
-              color: Colors.white,
-            ),
+            style: Utils.getQuestionTextStyle(context, fontSize: 16),
           ),
           const SizedBox(height: 10),
           if (!isCorrect)
             Text(
               _.txt_correct_answer(correctAnswer),
-              style: GoogleFonts.metal(
-                fontSize: 16,
-                color: Colors.green,
-              ),
+              style: Utils.getAnswerTextStyle(context, fontSize: 16),
             ),
           if (!isCorrect) const SizedBox(height: 10),
           Text(
             _.txt_user_answer(userAnswer),
-            style: GoogleFonts.metal(
-              fontSize: 16,
-              color: isCorrect ? Colors.green : Colors.red,
-            ),
+            style: Utils.getAnswerTextStyle(context,
+                fontSize: 16, fontColor: isCorrect ? Colors.green : Colors.red),
           ),
         ],
       ),
