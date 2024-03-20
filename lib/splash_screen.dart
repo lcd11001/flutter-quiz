@@ -5,6 +5,7 @@ import 'package:google_fonts/google_fonts.dart';
 
 import 'package:simple_quiz/config.dart';
 import 'package:simple_quiz/data/questions.dart';
+import 'package:simple_quiz/utils/utils.dart';
 
 class SplashScreen extends StatelessWidget {
   final Callback<ScreenType> onNextScreen;
@@ -27,18 +28,7 @@ class SplashScreen extends StatelessWidget {
           const SizedBox(height: 80),
           Text(
             _.app_title,
-            /*
-            style: const TextStyle(
-              fontSize: 30,
-              color: Colors.white,
-              fontWeight: FontWeight.bold,
-            ),
-            */
-            style: GoogleFonts.odibeeSans(
-              fontSize: 40,
-              color: Colors.white,
-              fontWeight: FontWeight.bold,
-            ),
+            style: Utils.getSummaryTextStyle(context, fontSize: 50),
           ),
           const SizedBox(height: 30),
           OutlinedButton.icon(
@@ -59,11 +49,7 @@ class SplashScreen extends StatelessWidget {
             icon: const Icon(Icons.play_arrow),
             label: Text(
               _.btn_start,
-              style: GoogleFonts.lato(
-                fontSize: 20,
-                color: Colors.white,
-                fontWeight: FontWeight.bold,
-              ),
+              style: Utils.getQuestionTextStyle(context),
             ),
           ),
         ],

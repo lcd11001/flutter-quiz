@@ -6,6 +6,8 @@ import 'package:simple_quiz/quiz_app.dart';
 void main() {
   GoogleFonts.config.allowRuntimeFetching = false;
   runApp(
-    const QuizApp(),
+    const QuizApp(
+      defaultLanguage: 'vi',
+    ),
   );
 }

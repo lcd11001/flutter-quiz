@@ -3,6 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:simple_quiz/components/question_summary.dart';
 import 'package:simple_quiz/data/questions.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:simple_quiz/utils/utils.dart';
 
 class ResultScreen extends StatelessWidget {
   final List<String> selectedAnswers;
@@ -56,11 +57,7 @@ class ResultScreen extends StatelessWidget {
           children: [
             Text(
               _.summary(correctAnswers, totalQuestions),
-              style: GoogleFonts.lato(
-                fontSize: 20,
-                color: Colors.white,
-                fontWeight: FontWeight.bold,
-              ),
+              style: Utils.getQuestionTextStyle(context),
             ),
             const SizedBox(height: 30),
             Expanded(
@@ -83,11 +80,7 @@ class ResultScreen extends StatelessWidget {
               icon: const Icon(Icons.refresh),
               label: Text(
                 _.btn_reset,
-                style: GoogleFonts.lato(
-                  fontSize: 20,
-                  color: Colors.white,
-                  fontWeight: FontWeight.bold,
-                ),
+                style: Utils.getQuestionTextStyle(context),
               ),
             ),
           ],

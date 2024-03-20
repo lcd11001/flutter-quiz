@@ -16,7 +16,7 @@ class Utils {
     String languageCode = _getLanguageCode(context);
 
     if (languageCode == 'vi') {
-      return GoogleFonts.lato(
+      return GoogleFonts.cabin(
         fontSize: fontSize,
         fontWeight: FontWeight.bold,
         color: fontColor,
@@ -38,7 +38,7 @@ class Utils {
     String languageCode = _getLanguageCode(context);
 
     if (languageCode == 'vi') {
-      return GoogleFonts.metal(
+      return GoogleFonts.jura(
         fontSize: fontSize,
         fontWeight: FontWeight.normal,
         color: fontColor,
@@ -60,7 +60,7 @@ class Utils {
     String languageCode = _getLanguageCode(context);
 
     if (languageCode == 'vi') {
-      return GoogleFonts.odibeeSans(
+      return GoogleFonts.calistoga(
         fontSize: fontSize,
         fontWeight: FontWeight.bold,
         color: fontColor,
