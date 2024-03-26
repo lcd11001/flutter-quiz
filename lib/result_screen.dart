@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:simple_quiz/components/question_summary.dart';
 import 'package:simple_quiz/data/questions.dart';
@@ -67,20 +68,23 @@ class ResultScreen extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 0),
-            OutlinedButton.icon(
-              onPressed: onResetQuiz,
-              style: OutlinedButton.styleFrom(
-                //fixedSize: const Size(200, 50),
-                foregroundColor: Colors.white,
-                side: const BorderSide(
-                  color: Colors.purpleAccent,
-                  width: 1,
+            Semantics(
+              label: "Reset Quiz Button",
+              child: OutlinedButton.icon(
+                onPressed: onResetQuiz,
+                style: OutlinedButton.styleFrom(
+                  //fixedSize: const Size(200, 50),
+                  foregroundColor: Colors.white,
+                  side: const BorderSide(
+                    color: Colors.purpleAccent,
+                    width: 1,
+                  ),
                 ),
-              ),
-              icon: const Icon(Icons.refresh),
-              label: Text(
-                _.btn_reset,
-                style: Utils.getQuestionTextStyle(context),
+                icon: const Icon(Icons.refresh),
+                label: Text(
+                  _.btn_reset,
+                  style: Utils.getQuestionTextStyle(context),
+                ),
               ),
             ),
           ],

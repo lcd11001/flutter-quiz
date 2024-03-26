@@ -25,31 +25,36 @@ class AnswerSummary extends StatelessWidget {
 
     return Container(
       margin: const EdgeInsets.only(bottom: 20),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: [
-          Text(
-            _.txt_question(id),
-            style: Utils.getSummaryTextStyle(context),
-          ),
-          const SizedBox(height: 10),
-          Text(
-            question,
-            style: Utils.getQuestionTextStyle(context, fontSize: 16),
-          ),
-          const SizedBox(height: 10),
-          if (!isCorrect)
+      child: Semantics(
+        label: "Summary $id",
+        container: true,
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
             Text(
-              _.txt_correct_answer(correctAnswer),
-              style: Utils.getAnswerTextStyle(context, fontSize: 16),
+              _.txt_question(id),
+              style: Utils.getSummaryTextStyle(context),
             ),
-          if (!isCorrect) const SizedBox(height: 10),
-          Text(
-            _.txt_user_answer(userAnswer),
-            style: Utils.getAnswerTextStyle(context,
-                fontSize: 16, fontColor: isCorrect ? Colors.green : Colors.red),
-          ),
-        ],
+            const SizedBox(height: 10),
+            Text(
+              question,
+              style: Utils.getQuestionTextStyle(context, fontSize: 16),
+            ),
+            const SizedBox(height: 10),
+            if (!isCorrect)
+              Text(
+                _.txt_correct_answer(correctAnswer),
+                style: Utils.getAnswerTextStyle(context, fontSize: 16),
+              ),
+            if (!isCorrect) const SizedBox(height: 10),
+            Text(
+              _.txt_user_answer(userAnswer),
+              style: Utils.getAnswerTextStyle(context,
+                  fontSize: 16,
+                  fontColor: isCorrect ? Colors.green : Colors.red),
+            ),
+          ],
+        ),
       ),
     );
   }

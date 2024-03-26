@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 import 'package:simple_quiz/config.dart';
 import 'package:simple_quiz/data/questions.dart';
@@ -20,10 +19,13 @@ class SplashScreen extends StatelessWidget {
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
-          Image.asset(
-            'assets/images/quiz-logo.png',
-            width: 300,
-            color: Colors.deepPurpleAccent,
+          Semantics(
+            label: "app logo",
+            child: Image.asset(
+              'assets/images/quiz-logo.png',
+              width: 300,
+              color: Colors.deepPurpleAccent,
+            ),
           ),
           const SizedBox(height: 80),
           Text(
@@ -31,25 +33,28 @@ class SplashScreen extends StatelessWidget {
             style: Utils.getSummaryTextStyle(context, fontSize: 50),
           ),
           const SizedBox(height: 30),
-          OutlinedButton.icon(
-            onPressed: () {
-              debugPrint('Button Pressed');
-              // load questions before change screen
-              loadQuestions(_);
-              onNextScreen(ScreenType.questionScreen);
-            },
-            style: OutlinedButton.styleFrom(
-              //fixedSize: const Size(200, 50),
-              foregroundColor: Colors.white,
-              side: const BorderSide(
-                color: Colors.purpleAccent,
-                width: 1,
+          Semantics(
+            label: "Start Quiz Button",
+            child: OutlinedButton.icon(
+              onPressed: () {
+                debugPrint('Button Pressed');
+                // load questions before change screen
+                loadQuestions(_);
+                onNextScreen(ScreenType.questionScreen);
+              },
+              style: OutlinedButton.styleFrom(
+                //fixedSize: const Size(200, 50),
+                foregroundColor: Colors.white,
+                side: const BorderSide(
+                  color: Colors.purpleAccent,
+                  width: 1,
+                ),
               ),
-            ),
-            icon: const Icon(Icons.play_arrow),
-            label: Text(
-              _.btn_start,
-              style: Utils.getQuestionTextStyle(context),
+              icon: const Icon(Icons.play_arrow),
+              label: Text(
+                _.btn_start,
+                style: Utils.getQuestionTextStyle(context),
+              ),
             ),
           ),
         ],
