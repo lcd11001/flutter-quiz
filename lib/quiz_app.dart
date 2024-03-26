@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 // run 'flutter gen-l10n' to generate the AppLocalizations class
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:simple_quiz/components/app_version.dart';
 
 import 'package:simple_quiz/config.dart';
 import 'package:simple_quiz/data/questions.dart';
@@ -78,6 +79,11 @@ class _QuizAppState extends State<QuizApp> {
       locale: Locale(widget.defaultLanguage), // force to use Vietnamese
       localizationsDelegates: AppLocalizations.localizationsDelegates,
       supportedLocales: AppLocalizations.supportedLocales,
+      theme: ThemeData(
+        bottomSheetTheme: const BottomSheetThemeData(
+          backgroundColor: Colors.transparent,
+        ),
+      ),
       home: Scaffold(
         /*
         extendBodyBehindAppBar: false,
@@ -109,6 +115,7 @@ class _QuizAppState extends State<QuizApp> {
           ),
           child: getActiveScreen(activeScreen!),
         ),
+        bottomSheet: const AppVersion(),
       ),
     );
   }
