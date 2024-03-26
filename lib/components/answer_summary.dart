@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:simple_quiz/utils/utils.dart';
 
 class AnswerSummary extends StatelessWidget {
@@ -31,9 +30,18 @@ class AnswerSummary extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            Text(
-              _.txt_question(id),
-              style: Utils.getSummaryTextStyle(context),
+            Row(
+              children: [
+                Icon(
+                  isCorrect ? Icons.check : Icons.close,
+                  color: isCorrect ? Colors.lightGreen : Colors.orange,
+                ),
+                const SizedBox(width: 10),
+                Text(
+                  _.txt_question(id),
+                  style: Utils.getSummaryTextStyle(context),
+                ),
+              ],
             ),
             const SizedBox(height: 10),
             Text(
@@ -51,7 +59,7 @@ class AnswerSummary extends StatelessWidget {
               _.txt_user_answer(userAnswer),
               style: Utils.getAnswerTextStyle(context,
                   fontSize: 16,
-                  fontColor: isCorrect ? Colors.green : Colors.red),
+                  fontColor: isCorrect ? Colors.lightGreen : Colors.orange),
             ),
           ],
         ),
