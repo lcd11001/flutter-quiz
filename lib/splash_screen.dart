@@ -24,7 +24,7 @@ class SplashScreen extends StatelessWidget {
             child: Image.asset(
               'assets/images/quiz-logo.png',
               width: 300,
-              color: Colors.deepPurpleAccent,
+              color: Colors.deepPurple.shade50,
             ),
           ),
           const SizedBox(height: 80),
@@ -46,7 +46,7 @@ class SplashScreen extends StatelessWidget {
                 //fixedSize: const Size(200, 50),
                 foregroundColor: Colors.white,
                 side: const BorderSide(
-                  color: Colors.purpleAccent,
+                  color: Colors.deepPurpleAccent,
                   width: 1,
                 ),
               ),

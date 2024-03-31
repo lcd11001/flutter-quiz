@@ -74,7 +74,7 @@ class ResultScreen extends StatelessWidget {
                   //fixedSize: const Size(200, 50),
                   foregroundColor: Colors.white,
                   side: const BorderSide(
-                    color: Colors.purpleAccent,
+                    color: Colors.deepPurpleAccent,
                     width: 1,
                   ),
                 ),
