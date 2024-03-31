@@ -67,7 +67,7 @@ class ResultScreen extends StatelessWidget {
             ),
             const SizedBox(height: 0),
             Semantics(
-              label: "Reset Quiz Button",
+              label: "Reset Quiz",
               child: OutlinedButton.icon(
                 onPressed: onResetQuiz,
                 style: OutlinedButton.styleFrom(

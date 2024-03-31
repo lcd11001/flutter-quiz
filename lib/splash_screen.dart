@@ -34,7 +34,7 @@ class SplashScreen extends StatelessWidget {
           ),
           const SizedBox(height: 30),
           Semantics(
-            label: "Start Quiz Button",
+            label: "Start Quiz",
             child: OutlinedButton.icon(
               onPressed: () {
                 debugPrint('Button Pressed');
