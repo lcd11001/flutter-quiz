@@ -36,21 +36,18 @@ class QuestionElement extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       margin: const EdgeInsets.all(40),
-      child: Semantics(
-        label: "Question $questionId",
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-            Text(
-              question,
-              style: Utils.getQuestionTextStyle(context),
-              textAlign: TextAlign.center,
-            ),
-            const SizedBox(height: 40),
-            ...generateAnwerWidgets(),
-          ],
-        ),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          Text(
+            question,
+            style: Utils.getQuestionTextStyle(context),
+            textAlign: TextAlign.center,
+          ),
+          const SizedBox(height: 40),
+          ...generateAnwerWidgets(),
+        ],
       ),
     );
   }

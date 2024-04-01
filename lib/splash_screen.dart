@@ -33,28 +33,25 @@ class SplashScreen extends StatelessWidget {
             style: Utils.getSummaryTextStyle(context, fontSize: 50),
           ),
           const SizedBox(height: 30),
-          Semantics(
-            label: "Start Quiz",
-            child: OutlinedButton.icon(
-              onPressed: () {
-                debugPrint('Button Pressed');
-                // load questions before change screen
-                loadQuestions(_);
-                onNextScreen(ScreenType.questionScreen);
-              },
-              style: OutlinedButton.styleFrom(
-                //fixedSize: const Size(200, 50),
-                foregroundColor: Colors.white,
-                side: const BorderSide(
-                  color: Colors.deepPurpleAccent,
-                  width: 1,
-                ),
+          OutlinedButton.icon(
+            onPressed: () {
+              debugPrint('Button Pressed');
+              // load questions before change screen
+              loadQuestions(_);
+              onNextScreen(ScreenType.questionScreen);
+            },
+            style: OutlinedButton.styleFrom(
+              //fixedSize: const Size(200, 50),
+              foregroundColor: Colors.white,
+              side: const BorderSide(
+                color: Colors.deepPurpleAccent,
+                width: 1,
               ),
-              icon: const Icon(Icons.play_arrow),
-              label: Text(
-                _.btn_start,
-                style: Utils.getQuestionTextStyle(context),
-              ),
+            ),
+            icon: const Icon(Icons.play_arrow),
+            label: Text(
+              _.btn_start,
+              style: Utils.getQuestionTextStyle(context),
             ),
           ),
         ],

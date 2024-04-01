@@ -66,23 +66,20 @@ class ResultScreen extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 0),
-            Semantics(
-              label: "Reset Quiz",
-              child: OutlinedButton.icon(
-                onPressed: onResetQuiz,
-                style: OutlinedButton.styleFrom(
-                  //fixedSize: const Size(200, 50),
-                  foregroundColor: Colors.white,
-                  side: const BorderSide(
-                    color: Colors.deepPurpleAccent,
-                    width: 1,
-                  ),
+            OutlinedButton.icon(
+              onPressed: onResetQuiz,
+              style: OutlinedButton.styleFrom(
+                //fixedSize: const Size(200, 50),
+                foregroundColor: Colors.white,
+                side: const BorderSide(
+                  color: Colors.deepPurpleAccent,
+                  width: 1,
                 ),
-                icon: const Icon(Icons.refresh),
-                label: Text(
-                  _.btn_reset,
-                  style: Utils.getQuestionTextStyle(context),
-                ),
+              ),
+              icon: const Icon(Icons.refresh),
+              label: Text(
+                _.btn_reset,
+                style: Utils.getQuestionTextStyle(context),
               ),
             ),
           ],

@@ -18,28 +18,25 @@ class AnswerButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Semantics(
-      label: "Answer $answerId",
-      child: ElevatedButton(
-        style: ElevatedButton.styleFrom(
-          backgroundColor: Colors.purple.shade700,
-          foregroundColor: Colors.white,
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(20),
-          ),
-          padding: const EdgeInsets.symmetric(
-            vertical: 15,
-            horizontal: 30,
-          ),
+    return ElevatedButton(
+      style: ElevatedButton.styleFrom(
+        backgroundColor: Colors.purple.shade700,
+        foregroundColor: Colors.white,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(20),
         ),
-        onPressed: () {
-          onAnswerSelected(answer);
-        },
-        child: Text(
-          answer,
-          style: Utils.getAnswerTextStyle(context),
-          textAlign: TextAlign.center,
+        padding: const EdgeInsets.symmetric(
+          vertical: 15,
+          horizontal: 30,
         ),
+      ),
+      onPressed: () {
+        onAnswerSelected(answer);
+      },
+      child: Text(
+        answer,
+        style: Utils.getAnswerTextStyle(context),
+        textAlign: TextAlign.center,
       ),
     );
   }
