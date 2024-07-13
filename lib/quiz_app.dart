@@ -103,6 +103,8 @@ class _QuizAppState extends State<QuizApp> {
             )),
         */
         body: Container(
+          // don't use SafeArea here,
+          // because I want to full-fill the entire screen with gradient color
           decoration: BoxDecoration(
             gradient: LinearGradient(
               colors: [
@@ -113,7 +115,10 @@ class _QuizAppState extends State<QuizApp> {
               end: Alignment.bottomCenter,
             ),
           ),
-          child: getActiveScreen(activeScreen!),
+          child: SafeArea(
+            // use SafeArea to avoid the top notch
+            child: getActiveScreen(activeScreen!),
+          ),
         ),
         bottomSheet: const AppVersion(),
       ),

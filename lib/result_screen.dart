@@ -48,7 +48,12 @@ class ResultScreen extends StatelessWidget {
 
     return Center(
       child: Container(
-        margin: const EdgeInsets.all(40),
+        margin: const EdgeInsets.only(
+          left: 40,
+          right: 40,
+          top: 10,
+          bottom: 30,
+        ),
         child: Column(
           //mainAxisSize: MainAxisSize.min,
           mainAxisAlignment: MainAxisAlignment.center,
