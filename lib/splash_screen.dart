@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:simple_quiz/l10n/generated/app_localizations.dart';
 
 import 'package:simple_quiz/config.dart';
 import 'package:simple_quiz/data/questions.dart';
@@ -13,7 +13,7 @@ class SplashScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final _ = AppLocalizations.of(context)!;
+    final loc = AppLocalizations.of(context)!;
 
     return Center(
       child: Column(
@@ -29,7 +29,7 @@ class SplashScreen extends StatelessWidget {
           ),
           const SizedBox(height: 80),
           Text(
-            _.app_title,
+            loc.app_title,
             style: Utils.getSummaryTextStyle(context, fontSize: 50),
           ),
           const SizedBox(height: 30),
@@ -37,20 +37,17 @@ class SplashScreen extends StatelessWidget {
             onPressed: () {
               debugPrint('Button Pressed');
               // load questions before change screen
-              loadQuestions(_);
+              loadQuestions(loc);
               onNextScreen(ScreenType.questionScreen);
             },
             style: OutlinedButton.styleFrom(
               //fixedSize: const Size(200, 50),
               foregroundColor: Colors.white,
-              side: const BorderSide(
-                color: Colors.deepPurpleAccent,
-                width: 1,
-              ),
+              side: const BorderSide(color: Colors.deepPurpleAccent, width: 1),
             ),
             icon: const Icon(Icons.play_arrow),
             label: Text(
-              _.btn_start,
+              loc.btn_start,
               style: Utils.getQuestionTextStyle(context),
             ),
           ),

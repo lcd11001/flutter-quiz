@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:simple_quiz/components/question_summary.dart';
 import 'package:simple_quiz/data/questions.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:simple_quiz/l10n/generated/app_localizations.dart';
 import 'package:simple_quiz/utils/utils.dart';
 
 class ResultScreen extends StatelessWidget {
@@ -44,23 +44,18 @@ class ResultScreen extends StatelessWidget {
         answerResults.where((item) => item['isCorrect'] as bool).length;
     final totalQuestions = Questions.data.length;
 
-    final _ = AppLocalizations.of(context)!;
+    final loc = AppLocalizations.of(context)!;
 
     return Center(
       child: Container(
-        margin: const EdgeInsets.only(
-          left: 40,
-          right: 40,
-          top: 10,
-          bottom: 30,
-        ),
+        margin: const EdgeInsets.only(left: 40, right: 40, top: 10, bottom: 30),
         child: Column(
           //mainAxisSize: MainAxisSize.min,
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             Text(
-              _.summary(correctAnswers, totalQuestions),
+              loc.summary(correctAnswers, totalQuestions),
               style: Utils.getQuestionTextStyle(context),
             ),
             const SizedBox(height: 30),
@@ -83,7 +78,7 @@ class ResultScreen extends StatelessWidget {
               ),
               icon: const Icon(Icons.refresh),
               label: Text(
-                _.btn_reset,
+                loc.btn_reset,
                 style: Utils.getQuestionTextStyle(context),
               ),
             ),

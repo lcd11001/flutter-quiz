@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:simple_quiz/l10n/generated/app_localizations.dart';
 import 'package:simple_quiz/utils/utils.dart';
 
 class AnswerSummary extends StatelessWidget {
@@ -20,7 +20,7 @@ class AnswerSummary extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final _ = AppLocalizations.of(context)!;
+    final loc = AppLocalizations.of(context)!;
 
     return Container(
       margin: const EdgeInsets.only(bottom: 20),
@@ -35,7 +35,7 @@ class AnswerSummary extends StatelessWidget {
               ),
               const SizedBox(width: 10),
               Text(
-                _.txt_question(id),
+                loc.txt_question(id),
                 style: Utils.getSummaryTextStyle(context),
               ),
             ],
@@ -48,15 +48,17 @@ class AnswerSummary extends StatelessWidget {
           const SizedBox(height: 10),
           if (!isCorrect)
             Text(
-              _.txt_correct_answer(correctAnswer),
+              loc.txt_correct_answer(correctAnswer),
               style: Utils.getAnswerTextStyle(context, fontSize: 16),
             ),
           if (!isCorrect) const SizedBox(height: 10),
           Text(
-            _.txt_user_answer(userAnswer),
-            style: Utils.getAnswerTextStyle(context,
-                fontSize: 16,
-                fontColor: isCorrect ? Colors.lightGreen : Colors.orange),
+            loc.txt_user_answer(userAnswer),
+            style: Utils.getAnswerTextStyle(
+              context,
+              fontSize: 16,
+              fontColor: isCorrect ? Colors.lightGreen : Colors.orange,
+            ),
           ),
         ],
       ),

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:simple_quiz/l10n/generated/app_localizations.dart';
 import 'package:simple_quiz/config.dart';
 
 class UnderconstructionScreen extends StatelessWidget {
@@ -9,7 +9,7 @@ class UnderconstructionScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final _ = AppLocalizations.of(context)!;
+    final loc = AppLocalizations.of(context)!;
 
     return Center(
       child: Column(
@@ -23,18 +23,12 @@ class UnderconstructionScreen extends StatelessWidget {
           const SizedBox(height: 80),
           Text(
             screenName.name,
-            style: const TextStyle(
-              fontSize: 20,
-              color: Colors.red,
-            ),
+            style: const TextStyle(fontSize: 20, color: Colors.red),
           ),
           const SizedBox(height: 10),
           Text(
-            _.app_under_construction,
-            style: const TextStyle(
-              fontSize: 20,
-              color: Colors.red,
-            ),
+            loc.app_under_construction,
+            style: const TextStyle(fontSize: 20, color: Colors.red),
           ),
         ],
       ),

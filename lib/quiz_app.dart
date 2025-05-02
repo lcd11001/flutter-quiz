@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 // run 'flutter gen-l10n' to generate the AppLocalizations class
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:simple_quiz/l10n/generated/app_localizations.dart';
 import 'package:simple_quiz/components/app_version.dart';
 
 import 'package:simple_quiz/config.dart';
@@ -107,10 +107,7 @@ class _QuizAppState extends State<QuizApp> {
           // because I want to full-fill the entire screen with gradient color
           decoration: BoxDecoration(
             gradient: LinearGradient(
-              colors: [
-                Colors.purple.shade900,
-                Colors.deepPurple.shade900,
-              ],
+              colors: [Colors.purple.shade900, Colors.deepPurple.shade900],
               begin: Alignment.topCenter,
               end: Alignment.bottomCenter,
             ),
