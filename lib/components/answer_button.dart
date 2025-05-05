@@ -20,10 +20,10 @@ class AnswerButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return ElevatedButton(
       style: ElevatedButton.styleFrom(
-        backgroundColor: Colors.purple.shade700,
-        foregroundColor: Colors.white,
+        backgroundColor: Colors.grey.shade300,
+        foregroundColor: Colors.purple.shade900,
         shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(20),
+          borderRadius: BorderRadius.circular(10),
         ),
         padding: const EdgeInsets.symmetric(
           vertical: 15,
@@ -35,7 +35,10 @@ class AnswerButton extends StatelessWidget {
       },
       child: Text(
         answer,
-        style: Utils.getAnswerTextStyle(context),
+        style: Utils.getAnswerTextStyle(context, 
+          fontSize: 20,
+          fontColor: Colors.purple,
+        ),
         textAlign: TextAlign.center,
       ),
     );
